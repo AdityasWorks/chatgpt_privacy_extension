@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "AI Prompt Privacy Protector",
+  "version": "0.1.0",
+  "description": "Encrypts sensitive data in AI prompts before sending to AI models.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
